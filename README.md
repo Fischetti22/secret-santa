@@ -1,8 +1,8 @@
 # Secret Santa
 
-A basic Streamlit Secret Santa draw for the family. Each person chooses their name once and receives one unique recipient.
+A basic Streamlit Secret Santa draw for the family. Each person chooses their name once and receives one unique recipient, and can add gift ideas to their wishlist.
 
-Pedro, Sydney, Selena, and Amelia cannot be matched with themselves or one another. The app also prevents every other self-match and duplicate recipient.
+Pedro, Sydney, Selena, and Amelia cannot be matched with themselves or one another. The app also prevents every other self-match and duplicate recipient. Gifts should cost $65 or less.
 
 ## Run locally
 

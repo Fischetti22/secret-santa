@@ -61,9 +61,11 @@ def load_state(path: Path = STATE_FILE) -> dict[str, object]:
         with path.open(encoding="utf-8") as state_file:
             state = json.load(state_file)
         if is_valid_assignment(state.get("assignments", {})):
+            state.setdefault("revealed", [])
+            state.setdefault("wishlists", {})
             return state
 
-    state = {"assignments": create_assignments(), "revealed": []}
+    state = {"assignments": create_assignments(), "revealed": [], "wishlists": {}}
     save_state(state, path)
     return state
 
