@@ -80,10 +80,17 @@ with wishlist_tab:
         save_state(state)
         st.success("Wishlist item added.")
 
-    if wishlist_name and wishlists.get(wishlist_name):
-        st.subheader(f"{wishlist_name}'s saved items")
-        for item in wishlists[wishlist_name]:
-            st.write(f"- {item}")
+    st.divider()
+    st.subheader("Family wishlists")
+    if any(wishlists.values()):
+        for name in PARTICIPANTS:
+            items = wishlists.get(name, [])
+            if items:
+                st.markdown(f"**{name}**")
+                for item in items:
+                    st.write(f"- {item}")
+    else:
+        st.caption("No wishlist items have been added yet.")
 
 with st.expander("Organizer controls"):
     organizer_password = os.environ.get("ORGANIZER_PASSWORD")
